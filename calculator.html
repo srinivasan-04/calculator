@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cal.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+<body> <div class="calculat">
+    <p class="display"></p>
+    <p>
+    <button onclick="                                  
+        console.log(cal);
+        updatecalculation('1');
+        ">1</button>
+    <button
+    
+    onclick="
+  
+    console.log(cal);
+    updatecalculation('2');
+    "    >2</button>
+    <button
+    onclick="
+       
+        console.log(cal);
+        updatecalculation('3');
+        "
+    >3</button>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation(' + ');
+        "
+    >+</button>
+</p>
+    <p> <button
+        onclick="
+
+        console.log(cal);
+        updatecalculation('4');
+        "
+        >4</button>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation('5');
+        "
+    >5</button>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation('6');
+        "
+    >6</button>
+    <button
+    onclick="
+
+        console.log(cal);
+        updatecalculation(' - ');
+        "
+    >-</button>
+</p>
+<p>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation('7');
+        "
+    >7</button>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation('8');
+        "
+    >8</button>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation('9');
+        "
+    >9</button>
+    <button
+    onclick="
+        console.log(cal);
+        updatecalculation(' * ');
+        "
+    >x</button></p>
+    <p>
+        <button
+        onclick="
+        console.log(cal);
+        updatecalculation('0');
+        "
+        >0</button>
+        <button
+        onclick="
+        console.log(cal);
+        updatecalculation('.');
+        "
+        >.</button>
+        <button
+        onclick="
+        cal=eval(cal);
+        console.log(cal);
+        display();
+        localStorage.setItem('cal',cal);
+        "
+        >=</button>
+        <button
+        onclick="
+        console.log(cal);
+        updatecalculation(' / ');
+        "
+        >/</button>
+    </p>
+    <p>
+        <button onclick="
+        cal=cal.slice(0,-1);
+
+        display();
+        localStorage.setItem('cal',cal);
+            ">delete</button>
+        <button 
+        onclick="
+        cal='';
+        console.log('cleared');
+        localStorage.setItem('cal',cal);
+        display();
+        "
+        >clear</button>
+    </p>
+</div> 
+    <script>
+        
+        let cal =localStorage.getItem('cal') || '';
+        display();
+        function updatecalculation(num){
+            cal+=num;
+            display();
+            localStorage.setItem('cal',cal);
+        }
+        function display(){
+            document.querySelector('.display').innerHTML=cal;
+        }
+        
+    </script>
+</body>
+</html>
